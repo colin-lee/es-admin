@@ -1,0 +1,143 @@
+#set(title="工程脚手架")
+#set(navbar="home")
+#tag layout_block("bodyContent")
+<form id="form" action="/starter.zip" method="get" role="form">
+  <div class="container-fluid">
+    <div class="row start-header">
+      <div class="container">
+        <h1>工程脚手架
+          <small>快速创建工程骨架</small>
+        </h1>
+      </div>
+    </div>
+    <div class="container start-main">
+      <input id="baseDir" name="baseDir" value="project-initializer" type="hidden">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h2>工程设置</h2>
+          <p>maven设置</p>
+          <div class="form-group">
+            <label for="groupId" class="control-label">GroupId</label>
+            <input id="groupId" class="form-control" value="com.fxiaoke" name="groupId" type="text">
+          </div>
+          <div class="form-group">
+            <label for="artifactId" class="control-label">ArtifactId</label>
+            <input id="artifactId" class="form-control" placeholder="demo" name="artifactId" type="text">
+          </div>
+          <div class="form-group full">
+            <label for="name" class="control-label">工程名</label>
+            <input id="name" class="form-control" placeholder="demo" name="name" type="text">
+          </div>
+          <div class="form-group full">
+            <label for="description" class="control-label">工程描述</label>
+            <input id="description" class="form-control" placeholder="工程描述" name="description" type="text">
+          </div>
+          <div class="form-group full">
+            <label for="packageName" class="control-label">Java包名</label>
+            <input id="packageName" class="form-control" value="com.fxiaoke" name="packageName" type="text">
+          </div>
+          <div class="form-group full">
+            <label for="packaging" class="control-label">打包方式</label>
+            <select class="form-control" id="packaging" name="packaging">
+              <option value="jar" selected="">Jar</option>
+              <option value="war">War</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="javaVersion" class="control-label">Java版本</label>
+            <select class="form-control" name="javaVersion" id="javaVersion">
+              <option value="1.8" selected="">1.8</option>
+              <option value="1.7">1.7</option>
+              <option value="1.6">1.6</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group col-sm-12 col-md-6">
+          <h2>依赖配置</h2>
+          <p>添加工程依赖关系</p>
+
+          <div class="checkbox">
+            <label>
+              <input name="style" value="autoconf" type="checkbox" checked="checked"/>
+              接入配置中心
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="style" value="aop" type="checkbox" checked="checked"/>
+              启用AOP切面
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="style" value="springmvc" type="checkbox" checked="checked"/>
+              SpringMVC
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="style" value="lombok" type="checkbox" checked="checked"/>
+              Lombok库
+              <p class="help-block">基于注解,减少大量Getter和Setter的代码</p>
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="style" value="dubbo" type="checkbox"/>
+              dubbo微服务
+              <p class="help-block">作为dubbo的provider或者consumer</p>
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="style" value="jedis" type="checkbox"/>
+              Jedis-Spring-Support
+              <p class="help-block">使用redis的缓存服务</p>
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="style" value="mongo" type="checkbox"/>
+              Mongo-Spring-Support
+              <p class="help-block">使用mongodb存取数据</p>
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="style" value="mybatis" type="checkbox"/>
+              Mybatis-Spring-Support
+              <p class="help-block">使用mybatis配合mysql存取数据</p>
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="style" value="shiro" type="checkbox"/>
+              Shiro身份认证
+              <p class="help-block">使用shiro做身份权限认证</p>
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input name="style" value="fcpServer" type="checkbox"/>
+              FcpServer
+              <p class="help-block">作为FCP协议的服务提供方,直接暴露给CEP提供HTTP服务</p>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-12 col-md-6">
+          <button name="generate-project" type="submit" class="btn btn-success" role="button">复制工程</button>
+          <span style="color:#737373">创建多模块工程</span>
+        </div>
+      </div>
+      <div class="row">
+        <p class="text-center">
+          <button name="generate-project" type="submit" class="btn btn-lg btn-primary" role="button">创建工程</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</form>
+#end
+#include("/include/layout.jetx")
